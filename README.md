@@ -1,7 +1,27 @@
 # flutter_roulette_app
 
 A new Flutter project.
-![demo](https://gyazo.com/28b972a4898259fd5f6050ee17d13855/raw)
+
+# ルーレット機能
+## 追加
+初期表示は追加ダイアログが表示されるようにして、以降は＋ボタンを押すことでルーレットのターゲットを追加できる。
+![demo](https://gyazo.com/c2549641c7b9740fdc7d3df4b92614ea/raw)
+
+## スタートボタンを押す
+ルーレット結果はランダムとなる。
+![demo](https://gyazo.com/3553e8a4da499bcacf4b494404aa3a6f/raw)
+
+## ルーレットを１回タップするルーレットの結果は必ず最初に入力したターゲットとなる、
+ルーレットの結果は必ず最初に入力したターゲットとなる。
+![demo](https://gyazo.com/3b0c9bd68cdd1d68cbe8bd0f8950e0a1/raw)
+
+## ルーレットを２回タップする
+ルーレットの結果は必ず最初に入力したターゲットとなる。
+![demo](https://gyazo.com/58c445c981a027037202023259166551/raw)
+
+## リセットボタンを押す
+ルーレットがリセットされ、初回表示となる。また初回は必ず入力が必要なのでダイアログを閉じない仕様としている。
+![demo](https://gyazo.com/12446f45bdb5b616ee439fb01b32c268/raw)
 
 
 
