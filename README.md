@@ -11,7 +11,7 @@ A new Flutter project.
 ルーレット結果はランダムとなる。<br>
 ![demo](https://gyazo.com/3553e8a4da499bcacf4b494404aa3a6f/raw)
 
-## ルーレットを１回タップするルーレットの結果は必ず最初に入力したターゲットとなる、
+## ルーレットを１回タップする
 ルーレットの結果は必ず最初に入力したターゲットとなる。<br>
 ![demo](https://gyazo.com/3b0c9bd68cdd1d68cbe8bd0f8950e0a1/raw)
 
