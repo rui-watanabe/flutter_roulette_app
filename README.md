@@ -1,6 +1,9 @@
 # flutter_roulette_app
 
 A new Flutter project.
+![demo](https://gyazo.com/28b972a4898259fd5f6050ee17d13855/raw)
+
+
 
 ## Getting Started
 
