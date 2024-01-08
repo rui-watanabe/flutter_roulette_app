@@ -1,13 +1,19 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_roulette_app/roulette.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_roulette_app/view/input_dialog.dart';
+import 'package:flutter_roulette_app/view/roulette.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:roulette/roulette.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -20,33 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const RoulettePage(),
     );
-  }
-}
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(),
-        body: Center(
-          child: ElevatedButton(
-            child: Text("次へ"),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => RoulettePage()),
-              );
-            },
-          ),
-        ));
   }
 }
