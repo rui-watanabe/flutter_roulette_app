@@ -17,7 +17,7 @@ class _InputDialogState extends ConsumerState<InputDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text("入力"),
+      title: Center(child: Text("追加")),
       content: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
@@ -28,6 +28,7 @@ class _InputDialogState extends ConsumerState<InputDialog> {
                 _name = value;
               });
             },
+            maxLength: 18,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

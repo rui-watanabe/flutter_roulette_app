@@ -59,7 +59,11 @@ class _RoulettePageState extends ConsumerState<RoulettePage>
 
     return Scaffold(
         appBar: AppBar(
-          title: const Text('ルーレット'),
+          title: Text(
+            'ルーレット',
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+          backgroundColor: Colors.brown[200],
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
@@ -71,46 +75,71 @@ class _RoulettePageState extends ConsumerState<RoulettePage>
             );
           },
           child: Icon(Icons.add),
+          backgroundColor: Colors.brown[400],
         ),
         body: Container(
           child: Center(
-              child: GestureDetector(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
                 ResultText(),
                 SizedBox(height: 50),
-                Stack(
-                  alignment: Alignment.topCenter,
-                  children: [
-                    SizedBox(
-                      width: 260,
-                      height: 260,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 30),
-                        // Roulettのcontrollerを設定
-                        child: Roulette(
-                          controller: _controller,
-                          style: const RouletteStyle(
-                            dividerThickness: 4,
+                GestureDetector(
+                  child: Stack(
+                    alignment: Alignment.topCenter,
+                    children: [
+                      SizedBox(
+                        width: 260,
+                        height: 260,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 30),
+                          // Roulettのcontrollerを設定
+                          child: Roulette(
+                            controller: _controller,
+                            style: const RouletteStyle(
+                              dividerThickness: 4,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    const Icon(
-                      FontAwesomeIcons.longArrowAltDown,
-                      size: 45,
-                      color: Colors.grey,
-                    ),
-                  ],
+                      const Icon(
+                        FontAwesomeIcons.longArrowAltDown,
+                        size: 45,
+                        color: Colors.grey,
+                      ),
+                    ],
+                  ),
+                  onTap: () async {
+                    //コントローラ動かす
+                    await _controller.rollTo(
+                      0,
+                      clockwise: true,
+                      offset: Random().nextDouble(),
+                    );
+                    ref
+                        .read(PieResultModelProvider.notifier)
+                        .setResultName(pieTargets[0].name);
+                  },
+                  onDoubleTap: () async {
+                    //コントローラ動かす
+                    await _controller.rollTo(
+                      pieTargets.length - 1,
+                      clockwise: true,
+                      offset: Random().nextDouble(),
+                    );
+                    ref
+                        .read(PieResultModelProvider.notifier)
+                        .setResultName(pieTargets[pieTargets.length - 1].name);
+                  },
                 ),
                 SizedBox(height: 50),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     OutlinedButton(
-                      child: const Text('スタート'),
+                      child: const Text('スタート',
+                          style: TextStyle(color: Colors.white)),
                       onPressed: () async {
                         int _targetIndex = Random().nextInt(pieTargets.length);
                         //コントローラ動かす
@@ -123,10 +152,13 @@ class _RoulettePageState extends ConsumerState<RoulettePage>
                             .read(PieResultModelProvider.notifier)
                             .setResultName(pieTargets[_targetIndex].name);
                       },
+                      style: OutlinedButton.styleFrom(
+                          backgroundColor: Colors.brown[300]),
                     ),
                     SizedBox(width: 40),
                     OutlinedButton(
-                      child: const Text('リセット'),
+                      child: const Text('リセット',
+                          style: TextStyle(color: Colors.white)),
                       onPressed: () {
                         setState(() {
                           ref
@@ -135,35 +167,16 @@ class _RoulettePageState extends ConsumerState<RoulettePage>
                         });
                         ref.read(PieModelProvider.notifier).deleteAllPies();
                       },
+                      style: OutlinedButton.styleFrom(
+                          backgroundColor: Colors.brown[300]),
                     ),
                   ],
                 )
               ],
             ),
-            onTap: () async {
-              //コントローラ動かす
-              await _controller.rollTo(
-                0,
-                clockwise: true,
-                offset: Random().nextDouble(),
-              );
-              ref
-                  .read(PieResultModelProvider.notifier)
-                  .setResultName(pieTargets[0].name);
-            },
-            onDoubleTap: () async {
-              //コントローラ動かす
-              await _controller.rollTo(
-                pieTargets.length - 1,
-                clockwise: true,
-                offset: Random().nextDouble(),
-              );
-              ref
-                  .read(PieResultModelProvider.notifier)
-                  .setResultName(pieTargets[pieTargets.length - 1].name);
-            },
-          )),
-        ));
+          ),
+        ),
+        backgroundColor: Colors.brown[100]);
   }
 
   @override
