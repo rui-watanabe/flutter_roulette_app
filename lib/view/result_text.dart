@@ -21,7 +21,7 @@ class _ResultTextState extends ConsumerState<ResultText> {
         ? Container(child: SizedBox(height: 80))
         : Container(
             padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: Expanded(
+            child: Container(
                 child: SizedBox(
               width: double.infinity,
               height: 80,
