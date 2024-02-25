@@ -42,7 +42,7 @@ class _InputDialogState extends ConsumerState<InputDialog> {
                     }
                   }),
               CustomTextButton(
-                  text: "登録",
+                  text: "追加",
                   onPressed: () {
                     if (_name.isNotEmpty) {
                       ref
