@@ -1,6 +1,7 @@
 # flutter_roulette_app
-
-A new Flutter project.
+ルーレットアプリケーション。<br>
+iOS,Android,Webに対応。<br>
+URL: https://rui-watanabe.github.io/flutter_roulette_app/
 
 # ルーレット機能
 ## 追加
