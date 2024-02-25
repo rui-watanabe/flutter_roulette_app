@@ -23,7 +23,7 @@ class CustomTextButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: TextButton.styleFrom(
-        primary: backgroundColor ?? Theme.of(context).primaryColor,
+        foregroundColor: backgroundColor ?? Theme.of(context).primaryColor,
         padding: padding ?? EdgeInsets.all(8.0),
         textStyle: textStyle ?? TextStyle(fontSize: 16),
         side: border,
