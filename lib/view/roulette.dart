@@ -56,8 +56,8 @@ class _RoulettePageState extends ConsumerState<RoulettePage>
         );
       });
     }
-
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text(
             'ルーレット',
