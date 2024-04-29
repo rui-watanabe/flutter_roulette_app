@@ -1,7 +1,8 @@
 # flutter_roulette_app
 ルーレットアプリケーション。<br>
 iOS,Android,Webに対応。<br>
-URL: https://rui-watanabe.github.io/flutter_roulette_app/
+Web版URL: https://rui-watanabe.github.io/flutter_roulette_app/  
+iOS版URL: https://apps.apple.com/jp/app/%E3%83%94%E3%83%B3%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%83%AB%E3%83%BC%E3%83%AC%E3%83%83%E3%83%88/id6499067735
 
 # ルーレット機能
 ## 追加
